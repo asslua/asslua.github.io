@@ -100,7 +100,18 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-        }
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap; /* allows content to wrap on smaller screens */
+	}
+
+	.item {
+		flex: 1; /* adjusts the width of the item to fill available space */
+	}
+
         .content div {
             margin: 10px;
             padding: 20px;
