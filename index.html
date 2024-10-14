@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+	
     <title>Chat House</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <style>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -16,66 +18,106 @@
             padding: 0;
         }
         header {
-            display: flex;
-            align-items: center;
+			display: flex;
+			align-items: center;
             background-color: #FFFFFF;
             color: black;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        header img {
-            height: 70px;
-            width: auto;
-            margin-right: 15px;
-        }
-        .ws {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .ws img {
-            width: 50px;
-        }
-        nav {
-            flex: 1;
+            padding: 20px;
+            padding-left: 100px;
+			position: sticky;
+			top:0;
+			z-index: 1000;
         }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
+            overflow: hidden;
+            background-color: #FFFFFF;
         }
         nav ul li {
-            margin: 0;
+            float: left;
         }
         nav ul li a {
             display: block;
-            padding: 15px 20px;
-            text-decoration: none;
             color: black;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
         }
         nav ul li a:hover {
-            background-color: #111;
-            color: white;
+            background-color: #FFFFFF;
         }
-        .navbar {
-            background-color: transparent;
-            border: none;
-            margin: 0;
+		
+		.dropdown-menu {
+			background-color: white;
+			
+		}
+
+		.navbar {
+			align-right: 30px;
+		}
+		
+		.navbar-default {
+			background-color: transparent; /* Remove the grey background */
+			border: none; /* Remove the border */
+		}
+
+		.navbar-nav {
+			padding-left: 20px;
+			margin-left: 0;
+		}
+
+		.navbar {
+			margin-bottom: 0; /* Remove any bottom margin Bootstrap adds */
+			margin-top: 10px;
+		}
+
+		.navbar-collapse {
+			padding-left: 0;
+		}
+
+		ul.nav.navbar-nav > li {
+			margin-right: 10px; /* Adds spacing between nav items */
+		}
+
+		ul.nav.navbar-nav > li a {
+			font-size: 18px;
+			padding: 30px; /* Consistent padding */
+			color: black; /* Override Bootstrap default color */
+		}
+
+		ul.nav.navbar-nav > li a:hover {
+			background-color: #111; /* Custom hover effect */
+			color: white;
+		}
+		
+        section {
+            padding: 200px;
+			color: black;
         }
-        .dropdown-menu {
-            background-color: white;
+		
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap; /* allows content to wrap on smaller screens */
+		}
+
+		.item {
+			flex: 1; /* adjusts the width of the item to fill available space */
+		}
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
-        .navbar-nav {
-            margin: 0;
-        }
-        .navbar-right {
-            margin-left: auto;
+        .content div {
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         footer {
             background-color: #333;
@@ -86,105 +128,62 @@
             bottom: 0;
             width: 100%;
         }
-        /* Responsive Styles */
-        @media (max-width: 768px) {
+		
 
-	header img {
-	    max-width: 100%;
-	    height: auto;
 	}
-	.ws img {
-	    max-width: 100%;
-	    width: 50px; /* Adjust based on your requirements */
-	}
-
-	header {
-	    display: flex;
-	    align-items: center;
-	    background-color: #FFFFFF;
-	    color: black;
-	    padding: 10px 20px;
-	    position: sticky;
-	    top: 0;
-	    z-index: 1000;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    width: 100%; /* Ensure the header fits within the screen */
-	    box-sizing: border-box; /* Include padding in width calculations */
-	}
-
-	.ws {
-	    position: relative;
-	    margin-left: auto;
-	    margin-right: 20px; /* Adjust as needed */
-	}
-
-	nav ul {
-        	flex-direction: column;
-        	align-items: center;
-    	}
-    
-	nav ul li a {
-        	padding: 10px 15px; /* Reduce padding for smaller screens */
-    	}
-    	footer {
-        	font-size: 14px; /* Adjust font size for smaller screens */
-    	}
-	}
-	*, *::before, *::after {
-	    box-sizing: border-box;
-	}
-        
+		
     </style>
 </head>
 <body>
 
 <header>
-    <img src="chathouselogo.png" alt="Chathouse Logo">
-    <div class="ws">
-        <a href="https://wa.me/message/W72XVQQLHX76O1">
-            <img src="whatsapp.png" alt="WhatsApp">
-        </a>
-    </div>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-collapse" id="header-navbar">
-            <ul class="nav navbar-nav">
-                <li><a href="/">首頁</a></li>
-                <li class="dropdown">
-                    <a href="/serviceInfo/65" class="dropdown-toggle" data-toggle="dropdown">
-                        屋宇檢測服務 <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/serviceInfo/69">a.驗樓服務(新樓/二手樓/裝修後檢測)</a></li>
-                        <li><a href="/serviceInfo/70">b.驗滲水檢測服務</a></li>
-                        <li><a href="/serviceInfo/89">c.強制驗窗/驗樓</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="/serviceInfo/100" class="dropdown-toggle" data-toggle="dropdown">
-                        屋宇維修服務 <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/serviceInfo/101">a.屋宇署法令</a></li>
-                        <li><a href="/serviceInfo/102">屋宇維修</a></li>
-                        <li><a href="/serviceInfo/108">c.長者自住維修服務(津貼)</a></li>
-                    </ul>
-                </li>
-                <li><a href="/contact">聯絡我們</a></li>
-            </ul>
+    <img src="chathouselogo.png" alt="Chathouse Logo" style="height:70px; width:auto; margin-right: 15px;">
+	<div class="ws" style="position: fixed; top: 40px; right: 40px;">
+		<a href="https://wa.me/message/W72XVQQLHX76O1">
+			<img src="whatsapp.png" alt="" style="width: 60px;">
+		</a>
+	</div>
+
+<script src="/assets/js/require.min.js" data-main="/assets/js/require-frontend.min.js?v=1.0.6"></script>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="collapse navbar-collapse" id="header-navbar">
+			<ul class="nav navbar-nav">
+				<li><a href="/">首頁</a></li>
+				<li class="dropdown">
+					<a href="/serviceInfo/65" class="dropdown-toggle" data-toggle="dropdown">
+						屋宇檢測服務 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="/serviceInfo/69">a.驗樓服務(新樓/二手樓/裝修後檢測)</a></li>
+						<li><a href="/serviceInfo/70">b.驗滲水檢測服務</a></li>
+						<li><a href="/serviceInfo/89">c.強制驗窗/驗樓</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="/serviceInfo/100" class="dropdown-toggle" data-toggle="dropdown">
+						屋宇維修服務 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="/serviceInfo/101">a.屋宇署法令</a></li>
+						<li><a href="/serviceInfo/102">屋宇維修</a></li>
+						<li><a href="/serviceInfo/108">c.長者自住維修服務(津貼)</a></li>
+					</ul>
+				</li>
+				<li><a href="/contact">聯絡我們</a></li>
+			</ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown">
-                        客戶登錄 <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> 登 錄</a></li>
+                                                <a href="/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown">客戶登錄 <b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a href="/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> 登 錄</a></li>
                         <li><a href="/index/user/register.html"><i class="fa fa-user-o fa-fw"></i> 註 冊</a></li>
+                                
                     </ul>
                 </li>
-            </ul>
-        </div>
-    </nav>
+            </ul>						
+		</div>
+	</nav>
+
 </header>
 
 
