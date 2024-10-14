@@ -116,6 +116,39 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .content div {
+                width: 45%; /* Two columns layout for medium screens */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .content div {
+                width: 30%; /* Three columns layout for large screens */
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav ul li {
+                float: none;
+                display: block;
+                text-align: center;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 50px 10px;
+            }
+
+            .arrow {
+                display: none; /* Hide arrows for small screens */
+            }
+        }
     </style>
 </head>
 <body>
