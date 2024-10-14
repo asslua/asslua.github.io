@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-	
-    <title>Chat House</title>
+	<title>Chat House</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -22,10 +20,10 @@
 			align-items: center;
             background-color: #FFFFFF;
             color: black;
-            padding: 20px;
-            padding-left: 100px;
+            padding: 2%;
+            padding-left: 5%;
 			position: sticky;
-			top:0;
+			top: 0;
 			z-index: 1000;
         }
         nav ul {
@@ -42,35 +40,34 @@
             display: block;
             color: black;
             text-align: center;
-            padding: 20px;
+            padding: 2%;
             text-decoration: none;
         }
         nav ul li a:hover {
             background-color: #FFFFFF;
         }
-		
+
 		.dropdown-menu {
 			background-color: white;
-			
 		}
 
 		.navbar {
-			align-right: 30px;
+			align-right: 5%;
 		}
-		
+
 		.navbar-default {
 			background-color: transparent; /* Remove the grey background */
 			border: none; /* Remove the border */
 		}
 
 		.navbar-nav {
-			padding-left: 20px;
+			padding-left: 2%;
 			margin-left: 0;
 		}
 
 		.navbar {
 			margin-bottom: 0; /* Remove any bottom margin Bootstrap adds */
-			margin-top: 10px;
+			margin-top: 1%;
 		}
 
 		.navbar-collapse {
@@ -78,12 +75,12 @@
 		}
 
 		ul.nav.navbar-nav > li {
-			margin-right: 10px; /* Adds spacing between nav items */
+			margin-right: 1%; /* Adds spacing between nav items */
 		}
 
 		ul.nav.navbar-nav > li a {
-			font-size: 18px;
-			padding: 30px; /* Consistent padding */
+			font-size: 3vw; /* Adjusts size based on screen width */
+			padding: 2%; /* Consistent padding */
 			color: black; /* Override Bootstrap default color */
 		}
 
@@ -91,48 +88,107 @@
 			background-color: #111; /* Custom hover effect */
 			color: white;
 		}
-		
+
         section {
-            padding: 200px;
+            padding: 10vh 5vw;
 			color: black;
         }
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+		}
+
+		.item {
+			flex: 1; /* Adjusts the width of the item to fill available space */
+			margin: 2%;
+		}
+
         .content {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-
-	.container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		flex-wrap: wrap; /* allows content to wrap on smaller screens */
-	}
-
-	.item {
-		flex: 1; /* adjusts the width of the item to fill available space */
-	}
-
+        }
         .content div {
-            margin: 10px;
-            padding: 20px;
+            margin: 2%;
+            padding: 5%;
             width: 30%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 2%;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
 
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul li {
+                float: none;
+            }
+            nav ul li a {
+                padding: 3%;
+                font-size: 5vw;
+            }
+            .content div {
+                width: 45%;
+            }
+            header {
+                padding: 4%;
+                padding-left: 3%;
+            }
+            footer {
+                padding: 5%;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .content div {
+                width: 100%;
+                padding: 10%;
+            }
+            nav ul li a {
+                font-size: 6vw;
+            }
         }
     </style>
 </head>
 <body>
+
+<header>
+    <h1>Chat House</h1>
+</header>
+
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="content">
+        <div class="item">Content 1</div>
+        <div class="item">Content 2</div>
+        <div class="item">Content 3</div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2024 Chat House
+</footer>
+
+</body>
+</html>
+
 
 <header>
     <img src="chathouselogo.png" alt="Chathouse Logo" style="height:70px; width:auto; margin-right: 15px;">
