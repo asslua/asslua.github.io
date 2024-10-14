@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-	<title>Chat House</title>
+	
+    <title>Chat House</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <style>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -20,10 +22,10 @@
 			align-items: center;
             background-color: #FFFFFF;
             color: black;
-            padding: 2%;
-            padding-left: 5%;
+            padding: 20px;
+            padding-left: 100px;
 			position: sticky;
-			top: 0;
+			top:0;
 			z-index: 1000;
         }
         nav ul {
@@ -40,34 +42,35 @@
             display: block;
             color: black;
             text-align: center;
-            padding: 2%;
+            padding: 20px;
             text-decoration: none;
         }
         nav ul li a:hover {
             background-color: #FFFFFF;
         }
-
+		
 		.dropdown-menu {
 			background-color: white;
+			
 		}
 
 		.navbar {
-			align-right: 5%;
+			align-right: 30px;
 		}
-
+		
 		.navbar-default {
 			background-color: transparent; /* Remove the grey background */
 			border: none; /* Remove the border */
 		}
 
 		.navbar-nav {
-			padding-left: 2%;
+			padding-left: 20px;
 			margin-left: 0;
 		}
 
 		.navbar {
 			margin-bottom: 0; /* Remove any bottom margin Bootstrap adds */
-			margin-top: 1%;
+			margin-top: 10px;
 		}
 
 		.navbar-collapse {
@@ -75,12 +78,12 @@
 		}
 
 		ul.nav.navbar-nav > li {
-			margin-right: 1%; /* Adds spacing between nav items */
+			margin-right: 10px; /* Adds spacing between nav items */
 		}
 
 		ul.nav.navbar-nav > li a {
-			font-size: 3vw; /* Adjusts size based on screen width */
-			padding: 2%; /* Consistent padding */
+			font-size: 18px;
+			padding: 30px; /* Consistent padding */
 			color: black; /* Override Bootstrap default color */
 		}
 
@@ -88,22 +91,21 @@
 			background-color: #111; /* Custom hover effect */
 			color: white;
 		}
-
+		
         section {
-            padding: 10vh 5vw;
+            padding: 200px;
 			color: black;
         }
-
+		
 		.container {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+			flex-wrap: wrap; /* allows content to wrap on smaller screens */
 		}
 
 		.item {
-			flex: 1; /* Adjusts the width of the item to fill available space */
-			margin: 2%;
+			flex: 1; /* adjusts the width of the item to fill available space */
 		}
 
         .content {
@@ -112,89 +114,89 @@
             flex-wrap: wrap;
         }
         .content div {
-            margin: 2%;
-            padding: 5%;
+            margin: 10px;
+            padding: 20px;
             width: 30%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 2%;
+            padding: 10px;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
-
-	@media screen and (orientation: portrait) {
-	    .navbar {
-	        width: 90vw;
-	        height: 50px;
-	        margin-top: 5vw;
-	    }
-	    .iconList a{
-	        font-size: 2vh;
-	    }
-	    .navbarLogo {
-	        display: block;
-	    }
-	    .works, .about, .theme-toggle {
-	        font-size: 1.5vh;
-	    }
-	    .home {
-	        display: none;
-	    }
-	    .desktop-logo {
-	        display: block;
-	    }
-	    .parallax .parallaxText {
-	        font-size: 15vmin;
-	    }
-	    .parallax img{
-	        position: absolute;
-	        width: 25vmin;
-	        height: 25vmin;
-	    }
-	    .mobile-hide {
-	        display: none;
-	    }
-	    .downArrow a{
-	        bottom: 10vh;
-	    }
-	    .worksPage1, .worksPage2, .worksPage3{
-	        background-position: 50% 30%;
-	        background-size: 90vw;
-	    }
-	    .aboutPage{
-	        background-position: 50% 5%;
-	        background-size: 80vw;
-	    }
-	    .works1, .works2, .works3, .aboutText{
-	        display: flex;
-	        flex-direction: column;
-	        align-items: center;
-	        width: 100vw;
-	        padding-inline: 0vw;
-	        padding-top: 20vh;
-	        gap: 1vh;
-	    }
-	    .works1 h2, .works2 a, .works3 h2, .aboutPage h1{
-	        width: 90vw;
-	    }
-	    .line1, .line2, .line3, .lineAbout{
-	        width: 70vw;
-	        height: 0.5vh;
-	        margin-right: 24.5vw;
-	        background-color: var(--text-color);
-	        padding: 0;
-	    }
-	    .works1 p, .works2 p, .works3 p, .aboutText p{
-	        width: 90vw;
-	        padding: 0;
-	    }
+		
+		@media screen and (orientation: portrait) {
+		.navbar {
+			width: 90vw;
+			height: 50px;
+			margin-top: 5vw;
+		}
+		.iconList a{
+			font-size: 2vh;
+		}
+		.navbarLogo {
+			display: block;
+		}
+		.works, .about, .theme-toggle {
+			font-size: 1.5vh;
+		}
+		.home {
+			display: none;
+		}
+		.desktop-logo {
+			display: block;
+		}
+		.parallax .parallaxText {
+			font-size: 15vmin;
+		}
+		.parallax img{
+			position: absolute;
+			width: 25vmin;
+			height: 25vmin;
+		}
+		.mobile-hide {
+			display: none;
+		}
+		.downArrow a{
+			bottom: 10vh;
+		}
+		.worksPage1, .worksPage2, .worksPage3{
+			background-position: 50% 30%;
+			background-size: 90vw;
+		}
+		.aboutPage{
+			background-position: 50% 5%;
+			background-size: 80vw;
+		}
+		.works1, .works2, .works3, .aboutText{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100vw;
+			padding-inline: 0vw;
+			padding-top: 20vh;
+			gap: 1vh;
+		}
+		.works1 h2, .works2 a, .works3 h2, .aboutPage h1{
+			width: 90vw;
+		}
+		.line1, .line2, .line3, .lineAbout{
+			width: 70vw;
+			height: 0.5vh;
+			margin-right: 24.5vw;
+			background-color: var(--text-color);
+			padding: 0;
+		}
+		.works1 p, .works2 p, .works3 p, .aboutText p{
+			width: 90vw;
+			padding: 0;
+		}
 	}
+		
     </style>
 </head>
 <body>
