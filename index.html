@@ -129,74 +129,24 @@
             width: 100%;
         }
 		
-		@media screen and (orientation: portrait) {
-		.navbar {
-			width: 90vw;
-			height: 50px;
-			margin-top: 5vw;
-		}
-		.iconList a{
-			font-size: 2vh;
-		}
-		.navbarLogo {
-			display: block;
-		}
-		.works, .about, .theme-toggle {
-			font-size: 1.5vh;
-		}
-		.home {
-			display: none;
-		}
-		.desktop-logo {
-			display: block;
-		}
-		.parallax .parallaxText {
-			font-size: 15vmin;
-		}
-		.parallax img{
-			position: absolute;
-			width: 25vmin;
-			height: 25vmin;
-		}
-		.mobile-hide {
-			display: none;
-		}
-		.downArrow a{
-			bottom: 10vh;
-		}
-		.worksPage1, .worksPage2, .worksPage3{
-			background-position: 50% 30%;
-			background-size: 90vw;
-		}
-		.aboutPage{
-			background-position: 50% 5%;
-			background-size: 80vw;
-		}
-		.works1, .works2, .works3, .aboutText{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100vw;
-			padding-inline: 0vw;
-			padding-top: 20vh;
-			gap: 1vh;
-		}
-		.works1 h2, .works2 a, .works3 h2, .aboutPage h1{
-			width: 90vw;
-		}
-		.line1, .line2, .line3, .lineAbout{
-			width: 70vw;
-			height: 0.5vh;
-			margin-right: 24.5vw;
-			background-color: var(--text-color);
-			padding: 0;
-		}
-		.works1 p, .works2 p, .works3 p, .aboutText p{
-			width: 90vw;
-			padding: 0;
-		}
+	@media screen and (orientation: portrait) {
+	    nav ul {
+	        display: flex;
+	        flex-direction: column;
+	        align-items: center;
+	    }
+	
+	    nav ul li {
+	        float: none;
+	        width: 100%;
+	    }
+	
+	    nav ul li a {
+	        padding: 15px;
+	        text-align: center;
+	        font-size: 16px;
+	    }
 	}
-		
     </style>
 </head>
 <body>
