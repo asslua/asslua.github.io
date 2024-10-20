@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+	
+    <title>Chat House</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+		padding: 0;
+
+        }
+        header {
+			display: flex;
+			align-items: center;
+            background-color: #FFFFFF;
+            color: black;
+            padding: 20px;
+            padding-left: 100px;
+			position: sticky;
+			top:0;
+			z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #FFFFFF;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #FFFFFF;
+        }
+		
+		.dropdown-menu {
+			background-color: white;
+			
+		}
+
+		.navbar {
+			align-right: 30px;
+		}
+		
+		.navbar-default {
+			background-color: transparent; /* Remove the grey background */
+			border: none; /* Remove the border */
+			text-weight: bold;
+		}
+
+		.navbar-nav {
+			padding-left: 20px;
+			margin-left: 0;
+		}
+
+		.navbar {
+			margin-bottom: 0; /* Remove any bottom margin Bootstrap adds */
+			margin-top: 10px;
+		}
+
+		.navbar-collapse {
+			padding-left: 0;
+		}
+
+		ul.nav.navbar-nav > li {
+			margin-right: 10px; /* Adds spacing between nav items */
+		}
+
+		ul.nav.navbar-nav > li a {
+			font-size: 18px;
+			padding: 30px; /* Consistent padding */
+			color: black; /* Override Bootstrap default color */
+		}
+
+		ul.nav.navbar-nav > li a:hover {
+			background-color: #111; /* Custom hover effect */
+			color: white;
+		}
+		
+        section {
+            padding: 200px;
+			color: black;
+        }
+		
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap; /* allows content to wrap on smaller screens */
+		}
+
+		.item {
+			flex: 1; /* adjusts the width of the item to fill available space */
+		}
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .content div {
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+			
+			
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+
+	}
+		
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="chathouselogo.png" alt="Chathouse Logo" style="height:70px; width:auto; margin-right: 15px;">
+	<div class="ws" style="position: fixed; top: 40px; right: 40px;">
+		<a href="https://wa.me/message/W72XVQQLHX76O1">
+			<img src="whatsapp.png" alt="" style="width: 60px;">
+		</a>
+	</div>
+
+<script src="/assets/js/require.min.js" data-main="/assets/js/require-frontend.min.js?v=1.0.6"></script>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="collapse navbar-collapse" id="header-navbar">
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">首頁</a></li>
+				<li><a href="aboutus.html">關於我們</a></li>
+				<li><a href="building_inspection.html">屋宇檢測服務</a></li>
+				<li class="dropdown">
+					<a href="building_maintenance.html">
+						屋宇維修服務
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="/serviceInfo/101">a.屋宇署法令</a></li>
+						<li><a href="/serviceInfo/102">屋宇維修</a></li>
+						<li><a href="/serviceInfo/108">c.長者自住維修服務(津貼)</a></li>
+					</ul>
+				</li>
+				<li><a href="/contact">聯絡我們</a></li>
+			</ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                                                <a href="/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown">客戶登錄 <b class="caret"></b></a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a href="/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> 登 錄</a></li>
+                        <li><a href="/index/user/register.html"><i class="fa fa-user-o fa-fw"></i> 註 冊</a></li>
+                                
+                    </ul>
+                </li>
+            </ul>						
+		</div>
+	</nav>
+
+</header>
+
+
+    <style>
+        #aboutus_title {
+            background-image: url('aboutusbackground.jpg'); 
+            background-position: center;
+			background-size: fit;
+		
+            width: 100%; 
+            background-repeat: no-repeat; 
+			text-weight: bold;
+
+			
+		}
+
+		
+        
+	</style>
+	
+	<section id="aboutus_title">
+		<h2></h2>
+	</section>
+	
+	<section id="aboutus_text" style="padding: 30px; text-align: center; background-color: #f5f5f5;">
+		<h3 style = "font-weight: bold;"> 關於我們</h3>
+		<p style="font-size: 24px; line-height: 2; max-width: 1000px; margin: 0 auto; color: black;">
+		與「屋測測一起，享受「以人為本」的全新居家安全和舒適的生活體驗！「屋測測」是香港的一個提供全面性屋宇檢測和維修解決方案的線上平台，我們網羅本港多家行業的專業服務供應商，並透過先進的智能數據分析和專業的配對服務管理，針對客戶需要提供更合適的服務及產品，同時為供應商拓展客源，為不同的平台使用者提供一站式優越服務體驗，共同打造理想的居家安全和生活體驗。
+			
+		</div>
+		</p>
+		</br>
+		<h3 style = "font-weight: bold;">我們的使命</h3>
+		<p style="font-size: 24px; line-height: 2; max-width: 1000px; margin: 0 auto; color: black;">
+		
+		透過先進的計算機技術、網絡通訊技術、智能雲端控制、綜合技術和居安工程學原理，為客戶提供全面的屋宇檢測和維修解決方案。
+		無論您需要維修、漏水檢測或樓宇勘測，我們將通過全面的智能數據分析和專業的配對服務管理，助您搜羅一站式最優質的服務承辦商，節省時間，為您提供「以人為本」的全新居家安全和生活體驗。
+		</p>
+	</section>
