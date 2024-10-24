@@ -2,122 +2,152 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-	
     <title>Chat House</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-		padding: 0;
-
-        }
-        header {
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
 			display: flex;
 			align-items: center;
-            background-color: #FFFFFF;
-            color: black;
-            padding: 20px;
-            padding-left: 100px;
-			position: sticky;
-			top:0;
-			z-index: 1000;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #FFFFFF;
-        }
-        nav ul li {
-            float: left;
-        }
-        nav ul li a {
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 20px;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            background-color: #FFFFFF;
-        }
-		
-		.dropdown-menu {
-			background-color: white;
-			
-		}
-
-		.navbar {
-			align-right: 30px;
-		}
-		
-		.navbar-default {
-			background-color: transparent; /* Remove the grey background */
-			border: none; /* Remove the border */
-			text-weight: bold;
-		}
-
-		.navbar-nav {
-			padding-left: 20px;
-			margin-left: 0;
-		}
-
-		.navbar {
-			margin-bottom: 0; /* Remove any bottom margin Bootstrap adds */
-			margin-top: 10px;
-		}
-
-		.navbar-collapse {
-			padding-left: 0;
-		}
-
-		ul.nav.navbar-nav > li {
-			margin-right: 10px; /* Adds spacing between nav items */
-		}
-
-		ul.nav.navbar-nav > li a {
-			font-size: 18px;
-			padding: 30px; /* Consistent padding */
-			color: black; /* Override Bootstrap default color */
-		}
-
-		ul.nav.navbar-nav > li a:hover {
-			background-color: #111; /* Custom hover effect */
-			color: white;
-		}
-		
-        section {
-            padding: 200px;
+			background-color: #FFFFFF;
 			color: black;
+			padding: 20px;
+			padding-left: 100px;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
+        .navbar {
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+        .navbar-default {
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+        }
+        .navbar-nav {
+            padding-left: 20px;
+        }
+        ul.nav.navbar-nav > li {
+            margin-right: 10px;
+        }
+        ul.nav.navbar-nav > li a {
+            font-size: 18px;
+            padding: 30px;
+            color: black;
+        }
+        ul.nav.navbar-nav > li a:hover {
+            background-color: #111;
+            color: white;
+        }
+        .menu-burger {
+            display: none;
         }
 		
-		.container {
+		.content-container {
+			height: 25vh; /* 25% of the viewport height */
+			overflow-y: auto; /* Allow vertical scrolling */
+			overflow-x: hidden; /* Disable horizontal scrolling */
+		}
+
+        @media screen and (orientation:portrait) {
+		.content-container {
+			height: 25vh; /* Adjust for mobile portrait mode */
+				}
+
+		
+		body {
+		font-family: 'Roboto', sans-serif;
+		margin: 0;
+		padding: 0;
+		}
+		
+		header {
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			flex-wrap: wrap; /* allows content to wrap on smaller screens */
+			align-items: center;
+			background-color: #FFFFFF;
+			color: black;
+			padding: 20px;
+			padding-top: 50px;
+			padding-left: 100px;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
 		}
+		
+            .navbar-nav {
+                display: none;
+            }
+            .menu-burger {
+                display: block;
+				position: fixed; 
+				right: 150px;
+				
+            }
+            .menu-burger > * {
+                position: relative;
+            }
+            .menu-burger input {
+                height: 40px;
+                margin: 0;
+                opacity: 0;
+                width: 40px;
+                z-index: 3;
+                position: absolute;
+            }
+            .menu-burger svg {
+                height: 40px;
+                width: 40px;
+                cursor: pointer;
+            }
+			ul.menu-burger__item-list {
+				background: #d1ffbd;
+				position: fixed;
+				top: 150px;
+				left: 0;
+				width: 100%;
+				color: #3c3836;
+				font-size: 32px;
+				list-style: none;
+				margin: 0;
+				padding: 0 20px;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
 
-		.item {
-			flex: 1; /* adjusts the width of the item to fill available space */
-		}
-
-        .content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .content div {
-            margin: 10px;
-            padding: 20px;
-            width: 30%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			input:checked ~ .menu-burger__item-list {
+				max-height: 300px; /* Adjust based on actual content height */
+				
+				
+				
+			}
+            .menu-burger svg line {
+                transition: 0.3s ease;
+            }
+            .menu-burger input:checked ~ svg line:nth-of-type(2) {
+                opacity: 0;
+            }
+			.menu-burger input:checked ~ svg line:nth-of-type(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+			.menu-burger input:checked ~ svg line:nth-of-type(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
+			
+			logo {
+				height:70px; 
+				margin-top:100px;
+				width:auto; 
+				margin-right: 15px;
+			}
         }
         footer {
             background-color: #333;
@@ -128,61 +158,88 @@
             bottom: 0;
             width: 100%;
         }
-		
-
-	}
-		
+  
     </style>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
 
+<body>
 <header>
-    <img src="chathouselogo.png" alt="Chathouse Logo" style="height:70px; width:auto; margin-right: 15px;">
-	<div class="ws" style="position: fixed; top: 40px; right: 40px;">
+
+	<div class = "logo">
+		<img src="chathouselogo.png" alt="Chathouse Logo">
+	</div>
+	
+	<div class="ws" style="position: fixed;  top: 60px; right: 40px;">
 		<a href="https://wa.me/message/W72XVQQLHX76O1">
 			<img src="whatsapp.png" alt="" style="width: 60px;">
 		</a>
 	</div>
-
-<script src="/assets/js/require.min.js" data-main="/assets/js/require-frontend.min.js?v=1.0.6"></script>
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="collapse navbar-collapse" id="header-navbar">
-			<ul class="nav navbar-nav">
-				<li><a href="index.html">首頁</a></li>
-				<li><a href="aboutus.html">關於我們</a></li>
-				<li class="dropdown">
-					<a href="building_inspection.html">
-						屋宇檢測服務
-					</a>
-				</li>
-				<li class="dropdown">
-					<a href="building_maintenance.html">
-						屋宇維修服務
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="/serviceInfo/101">a.屋宇署法令</a></li>
-						<li><a href="/serviceInfo/102">屋宇維修</a></li>
-						<li><a href="/serviceInfo/108">c.長者自住維修服務(津貼)</a></li>
-					</ul>
-				</li>
-				<li><a href="/contact">聯絡我們</a></li>
-			</ul>
-            <ul class="nav navbar-nav navbar-right">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="collapse navbar-collapse" id="header-navbar">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="aboutus.html">關於我們</a></li>
                 <li class="dropdown">
-                                                <a href="/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown">客戶登錄 <b class="caret"></b></a>
-                                                <ul class="dropdown-menu">
-                                                        <li><a href="/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> 登 錄</a></li>
-                        <li><a href="/index/user/register.html"><i class="fa fa-user-o fa-fw"></i> 註 冊</a></li>
-                                
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">屋宇檢測服務<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="building_inspection1.html">屋宇檢測服務-滲水檢測服務</a></li>
+                        <li><a href="building_inspection2.html">屋宇檢測服務-強制驗樓/驗窗</a></li>
                     </ul>
                 </li>
-            </ul>						
-		</div>
-	</nav>
+                <li class="dropdown">
+                    <a href="building_maintenance.html">屋宇維修服務</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/serviceInfo/101">a.屋宇署法令</a></li>
+                        <li><a href="/serviceInfo/102">屋宇維修</a></li>
+                        <li><a href="/serviceInfo/108">c.長者自住維修服務(津貼)</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contact">聯絡我們</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown">客戶登錄 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> 登 錄</a></li>
+                        <li><a href="/index/user/register.html"><i class="fa fa-user-o fa-fw"></i> 註 冊</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="menu-burger">
+        <input type="checkbox" />
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-menu-2"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+        <ul class="menu-burger__item-list">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="aboutus.html">關於我們</a></li>
+            <li><a href="building_inspection1.html">屋宇檢測服務</a></li>
+            <li><a href="building_maintenance.html">屋宇維修服務</a></li>
+            <li><a href="/contact">聯絡我們</a></li>
+        </ul>
+    </div>
+	
 
 </header>
 
-
+</html>
 
 
 <section id="about" style="padding-left:800px; height: 600px; background-attachment: fixed; background-position: center; background-repeat: no-repeat; color: black;">
@@ -685,9 +742,6 @@
         z-index: 1000; /* Ensure it's on top */
     }
 </style>
-
-
-
 
 
 </body>
